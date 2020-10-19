@@ -26,15 +26,24 @@
 var array_cognomi = ['Del Re', 'Settanni', 'Lieggi' ]; // inizializzo array con i cognomi
 var cognome_utente = prompt('inserisci il tuo cognome'); // chiedo all' utente di inserire il cognome
 
-array_cognomi.push(cognome_utente); // pusho il cognome inserito nell' array_cognomi
+if (isNaN(cognome_utente)){
+    array_cognomi.push(cognome_utente); // pusho il cognome inserito nell' array_cognomi
+    console.log(array_cognomi.sort()); // stampo la lista dei cognomi in ordine alfabetico
 
-console.log(array_cognomi.sort()); // stampo la lista dei cognomi in ordine alfabetico
+    var i = 0  // inizializzo il contatore del ciclo while
+    while (array_cognomi[i] != cognome_utente){ // chiedo di rimanere nel ciclo finchè array_cognomi[i] è diverso da cognome_utente
+        i++; // aggiorno il contatore di 1
+    }
+    console.log('Il tuo cognome si trova in : ' + (i + 1) + 'a posizione'); // quando array_cognomi[i] sarà uguale a cognome_utente, stamperò la posizione del cognome nell' array
 
-var i = 0  // inizializzo il contatore del ciclo while
-while (array_cognomi[i] != cognome_utente){ // chiedo di rimanere nel ciclo finchè array_cognomi[i] è diverso da cognome_utente
-    i++; // aggiorno il contatore di 1
 }
-console.log('Il tuo cognome si trova in : ' + (i + 1) + 'a posizione'); // quando array_cognomi[i] sarà uguale a cognome_utente, stamperò la posizione del cognome nell' array
+else {
+    alert('inserisci un cognome valido e non un numero');
+
+}
+
+
+
 
 
 //************************************ ESERCIZIO CON DO-WHILE *****************************
